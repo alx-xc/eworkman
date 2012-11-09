@@ -1,7 +1,7 @@
 {application, eworkman, [
     {description, "eworkman"},
     {id, "eworkman"},
-    {vsn, "1.2.2"},
+    {vsn, "1.2.3"},
     {modules, [
         eworkman_app,
         eworkman_conf,
@@ -11,12 +11,10 @@
         eworkman_sup,
         eworkman_worker_misc,
         eworkman_worker_spawn,
-        eworkman_worker_web,
         eworkman_worker_web_page
     ]},
     {registered, [eworkman_handler, eworkman_long_supervisor]},
     {mod, {eworkman_app,[]}},
-    %{applications, [kernel, stdlib]}
-    {applications, [kernel, stdlib, ssl]} % ssl - for yaws, actually
+    {applications, [kernel, stdlib]}
 ]}.
 

@@ -64,8 +64,7 @@ init(_) ->
     prepare_updated_config(),
     C = eworkman_conf:get_config_worker(),
     Ct = prepare_all(C),
-    Conf_w = eworkman_worker_web:prepare_web(Ct),
-    New = eworkman_worker_misc:prepare_workers(Conf_w),
+    New = eworkman_worker_misc:prepare_workers(Ct),
     % trap_exit is unnecessary. Children are ripped by supervisor
     %process_flag(trap_exit, true),
     mpln_p_debug:pr({?MODULE, 'init done', ?LINE}, New#ewm.debug, run, 1),
